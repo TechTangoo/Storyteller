@@ -9,7 +9,9 @@ function Register() {
   const [reqbody, setReqbody] = useState({});
 
   const handleRegister = () => {
-
+    sessionStorage.setItem('email', reqbody.email);
+    sessionStorage.setItem('token', true);
+    navigate('/');
   }
 
   return (

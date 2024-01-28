@@ -9,7 +9,9 @@ function Login() {
   const [reqbody, setReqbody] = useState({});
 
   const handleLogin = () => {
-    
+    sessionStorage.setItem('email', reqbody.email);
+    sessionStorage.setItem('token', true);
+    navigate('/');
   }
 
   return (
