@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import heroimage from '../img/login.png';
 import { useNavigate } from 'react-router-dom';
+import { LoginAPI } from '../api';
 
 function Login() {
 
@@ -9,9 +10,17 @@ function Login() {
   const [reqbody, setReqbody] = useState({});
 
   const handleLogin = () => {
-    sessionStorage.setItem('email', reqbody.email);
-    sessionStorage.setItem('token', true);
-    navigate('/');
+    LoginAPI({ email: reqbody.email, password: reqbody.password }).then((res) => {
+      console.log(res);
+      if (res?.success) {
+        sessionStorage.setItem('email', reqbody.email);
+        sessionStorage.setItem('token', true);
+        navigate('/');
+      } else {
+        console.log("error", res?.message ?? res?.error);
+      }
+    })
+    
   }
 
   return (

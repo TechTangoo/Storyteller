@@ -1,8 +1,8 @@
 // registration api
-export const Registration = (reqbody) => {
+export const RegistrationAPI = (reqbody) => {
     const JWT = sessionStorage.getItem('token')
 
-    const url = process.env.REACT_APP_API_URL + '/register'
+    const url = process.env.REACT_APP_API_URL + '/user/register'
     const fetchOptions = {
         method: "POST",
         headers: {
@@ -14,15 +14,14 @@ export const Registration = (reqbody) => {
         .then((response) => response.json())
         .catch((error) => {
             console.log(error);
-            Sentry.captureException(error);
         });
 }
 
 // Login api
-export const Login = (reqbody) => {
+export const LoginAPI = (reqbody) => {
     const JWT = sessionStorage.getItem('token')
 
-    const url = process.env.REACT_APP_API_URL + '/login'
+    const url = process.env.REACT_APP_API_URL + '/user/login'
     const fetchOptions = {
         method: "POST",
         headers: {
@@ -34,6 +33,5 @@ export const Login = (reqbody) => {
         .then((response) => response.json())
         .catch((error) => {
             console.log(error);
-            Sentry.captureException(error);
         });
 }
