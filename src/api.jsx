@@ -1,6 +1,5 @@
 // registration api
 export const RegistrationAPI = (reqbody) => {
-    const JWT = sessionStorage.getItem('token')
 
     const url = process.env.REACT_APP_API_URL + '/user/register'
     const fetchOptions = {
@@ -19,7 +18,6 @@ export const RegistrationAPI = (reqbody) => {
 
 // Login api
 export const LoginAPI = (reqbody) => {
-    const JWT = sessionStorage.getItem('token')
 
     const url = process.env.REACT_APP_API_URL + '/user/login'
     const fetchOptions = {
