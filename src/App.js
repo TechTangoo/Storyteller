@@ -17,13 +17,13 @@ function App() {
     <div >
       <Suspense fallback={<h3>Loading...</h3>}>
         {token ?
-        <div style={{ alignItems: 'center', position: 'absolute', display: 'flex', flex: 1, backgroundColor: '#a855f7', height: 50, width: '100vw', justifyContent: 'space-between' }}>
-          <div>LOGO</div>
-          <div>
-            <Sidebar />
+          <div style={{ alignItems: 'center', position: 'absolute', display: 'flex', flex: 1, backgroundColor: '#a855f7', height: 50, width: '100vw', justifyContent: 'space-between' }}>
+            <div>LOGO</div>
+            <div>
+              <Sidebar />
+            </div>
           </div>
-          </div>
-         : null}
+          : null}
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/login" exact element={<Login />} />
