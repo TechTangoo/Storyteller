@@ -1,4 +1,4 @@
-input {
+input, textarea {
   padding: 8px;
   font-size: 18px;
   border-radius: 20px;
@@ -8,10 +8,11 @@ input {
   font-weight: 600;
 }
 
-input:focus {
+input:focus, textarea:focus {
   border: none;
   outline: none;
 }
+
 
 body {
   font-family: 'Cormorant', serif;

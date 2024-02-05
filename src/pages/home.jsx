@@ -6,7 +6,7 @@ function Home() {
   const navigate = useNavigate()
   useEffect(() => {
     if (!sessionStorage.getItem('email')) {
-      navigate('/login');
+      // navigate('/login');
     }
   },[])
   return (
