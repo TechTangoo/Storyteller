@@ -32,8 +32,8 @@ function Login() {
   return (
     <div className='flex flex-1 w-screen h-screen' style={{ backgroundColor: '#571993' }}>
       <ToastContainer />
-      <div className='flex-1' style={{ backgroundImage: `url(${heroimage})`, backgroundSize: '100% 100vh', backgroundRepeat: 'no-repeat', }}>
-
+      <div className='flex-1' style={{ backgroundImage: `url(${heroimage})`, backgroundSize: '100% 100vh', backgroundRepeat: 'no-repeat', display:'flex', justifyContent:'center', alignItems:'center' }}>
+        <h3 className='text-yellow-200' style={{ fontSize: 32, fontWeight: 'bold', marginBottom: 0, marginLeft: 15 }}>Night time story for kids</h3>
       </div>
       <div className='flex-1 h-screen flex flex-col justify-center'>
         <h3 className='text-3xl font-bold text-yellow-200 text-center align-center justify-center'>Welcome back!</h3>
