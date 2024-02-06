@@ -16,6 +16,7 @@ input:focus, textarea:focus {
 
 body {
   font-family: 'Cormorant', serif;
+  overflow-x: hidden;
 }
 
 .btn {
@@ -27,4 +28,28 @@ body {
   font-family: 'Lemon, serif';
   color: '#fef9c3';
   font-size: 18;
+}
+
+/* Target the scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  /* Width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* Color of the scrollbar track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #3b0764;
+  /* Color of the scrollbar handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #4a0083;
+  /* Color of the scrollbar handle on hover */
 }

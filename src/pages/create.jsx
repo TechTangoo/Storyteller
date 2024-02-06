@@ -28,8 +28,8 @@ function Create() {
   }
 
   return (
-    <div className='bg-purple-200 dark:bg-purple-900'>
-      Create Story
+    <div className='bg-purple-200 dark:bg-purple-900 w-screen h-full'>
+      <h3 className='text-purple-800 dark:text-purple-100'>Create New Story</h3>
       <div style={{ marginLeft: 20, marginTop: '15%' }}>
         <div className='text-3xl md:text-2xl sm:text-xl font-bold dark:text-purple-200 text-purple-900 mb-2'>Choose your story category</div>
         <div style={{ display: 'flex', flexWrap: 'wrap', flex: 1, gap: 25 }}>
