@@ -2,7 +2,12 @@ import './App.css';
 import { Route, Routes } from "react-router-dom";
 import { styled } from '@mui/material/styles';
 import Switch from '@mui/material/Switch';
+import bgmusic from './img/bg.mp3'
+import MusicNoteIcon from '@mui/icons-material/MusicNote';
+import MusicOffIcon from '@mui/icons-material/MusicOff';
+import click from './img/click.wav'
 import React, { lazy, Suspense, useEffect, useState } from "react";
+import { Tooltip } from '@mui/material';
 const Home = lazy(() => import('./pages/home'));
 const Login = lazy(() => import('./pages/login'));
 const Register = lazy(() => import('./pages/register'));
@@ -16,17 +21,19 @@ const Sidebar = lazy(() => import('./components/sidebar'));
 function App() {
 
   const token = sessionStorage.getItem('token') ?? true;
-  const [theme, setTheme] = useState(true)
+  const [theme, setTheme] = useState(true);
+  const [sound, setSound] = useState(false);
+  const [audio] = useState(new Audio(bgmusic));
 
   useEffect(() => {
     if (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       setTheme(true);
-      localStorage.theme = 'dark'
+      localStorage.theme = 'dark';
     } else {
       setTheme(false);
-      localStorage.theme = 'light'
+      localStorage.theme = 'light';
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
     if (theme) {
@@ -39,7 +46,6 @@ function App() {
   }, [theme])
 
   const handleThemeChange = () => {
-    console.log("hejrle", theme)
     setTheme(!theme);
   }
 
@@ -90,6 +96,24 @@ function App() {
     },
   }));
 
+  const handlePlay = (bool) => {
+    if (bool) {
+      setSound(true);
+      audio.volume = 0.05;
+      audio.loop = true;
+      audio.play();
+    } else {
+      setSound(false);
+      audio.pause();
+    }
+  };
+
+  const buttonClick = () => {
+    const audio = new Audio(click);
+    audio.volume = 0.2;
+    audio.play();
+  }
+
 
   return (
     <div >
@@ -98,8 +122,19 @@ function App() {
           <div style={{ alignItems: 'center', position: 'absolute', display: 'flex', flex: 1, backgroundColor: '#a855f7', height: 50, width: '100vw', justifyContent: 'space-between' }}>
             <div>LOGO</div>
             <div className='flex items-center'>
+              {sound ?
+                <Tooltip title='Turn Off'>
+                  <div onClick={() => handlePlay(false)}>
+                    <MusicNoteIcon sx={{ color: "#581c87" }} />
+                  </div>
+                </Tooltip> :
+                <Tooltip title='Turn On'>
+                  <div onClick={() => handlePlay(true)}>
+                    <MusicOffIcon sx={{ color: "#581c87" }} />
+                  </div>
+                </Tooltip>}
               <MaterialUISwitch sx={{ m: 1 }} checked={theme} onChange={(e) => handleThemeChange(e.target.checked)} />
-              <Sidebar />
+              <Sidebar buttonClick={buttonClick} />
             </div>
           </div>
           : null}
