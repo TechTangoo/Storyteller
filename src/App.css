@@ -92,6 +92,11 @@ body {
     width: calc(100vw - 200px);
     height: 200px;
   }
+
+  .cardimage {
+    width: 95%;
+    height: 170px;
+  }
 }
 
 /* Styles for screens between 600px and 1024px */
@@ -110,6 +115,11 @@ body {
     width: calc(100vw - 200px);
     height: 250px;
   }
+
+  .cardimage {
+    width: 95%;
+    height: 120px;
+  }
 }
 
 @media screen and (min-width: 800px) and (max-width: 1024px) {
@@ -126,6 +136,11 @@ body {
   #heroimage {
     width: calc(100vw - 200px);
     height: 400px;
+  }
+
+  .cardimage {
+    width: 95%;
+    height: 180px;
   }
 }
 
@@ -145,6 +160,11 @@ body {
     width: calc(100vw - 200px);
     height: 500px;
   }
+
+  .cardimage {
+    width: 95%;
+    height: 240px;
+  }
 }
 
 @media screen and (min-width: 1500px) {
@@ -161,6 +181,11 @@ body {
   #heroimage {
     width: calc(100vw - 200px);
     height: 750px;
+  }
+
+  .cardimage {
+    width: 95%;
+    height: 280px;
   }
 }
 
@@ -185,8 +210,9 @@ body {
   object-fit: cover;
 }
 
-.swiper-button-next, .swiper-button-prev{
-  --swiper-theme-color:#3b0764;
+.swiper-button-next,
+.swiper-button-prev {
+  --swiper-theme-color: #3b0764;
   --swiper-navigation-size: 34px;
   font-weight: bold;
 }
