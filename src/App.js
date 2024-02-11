@@ -8,6 +8,7 @@ import MusicOffIcon from '@mui/icons-material/MusicOff';
 import click from './img/click.wav'
 import React, { lazy, Suspense, useEffect, useState } from "react";
 import { Tooltip } from '@mui/material';
+import Background from './components/background';
 const Home = lazy(() => import('./pages/home'));
 const Login = lazy(() => import('./pages/login'));
 const Register = lazy(() => import('./pages/register'));
@@ -117,9 +118,10 @@ function App() {
 
   return (
     <div >
+      <Background />
       <Suspense fallback={<h3>Loading...</h3>}>
         {token ?
-          <div style={{ alignItems: 'center', position: 'absolute', display: 'flex', flex: 1, backgroundColor: '#a855f7', height: 50, width: '100vw', justifyContent: 'space-between' }}>
+          <div style={{ alignItems: 'center', position: 'absolute', display: 'flex', flex: 1, backgroundColor: '#a855f7', height: 50, width: '100vw', justifyContent: 'space-between', zIndex:10 }}>
             <div>LOGO</div>
             <div className='flex items-center'>
               {sound ?
@@ -148,7 +150,7 @@ function App() {
           <Route path="/profile" exact element={<Profile />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </Suspense>
+        </Suspense>
     </div>
   );
 }

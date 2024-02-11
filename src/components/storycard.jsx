@@ -4,7 +4,7 @@ import { Divider } from '@mui/material';
 
 function StoryCard({ item }) {
     return (
-        <div className='min-w-1/4 max-w-sm min-h-4/5 bg-purple-50 p-5 rounded-xl my-5 shadow'>
+        <div className='min-w-1/4 max-w-sm min-h-4/5 bg-purple-200 p-5 rounded-xl my-5 shadow'>
             <div className='flex-1'>
                 <div style={{ display: 'flex', flexWrap: 'wrap', flex: 1, gap: 25, justifyContent: 'center' }}>
                     <div
