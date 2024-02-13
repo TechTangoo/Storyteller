@@ -9,6 +9,7 @@ import click from './img/click.wav'
 import React, { lazy, Suspense, useEffect, useState } from "react";
 import { Tooltip } from '@mui/material';
 import Background from './components/background';
+import Butterfly from './components/butterfly';
 const Home = lazy(() => import('./pages/home'));
 const Login = lazy(() => import('./pages/login'));
 const Register = lazy(() => import('./pages/register'));
@@ -25,6 +26,7 @@ function App() {
   const [theme, setTheme] = useState(true);
   const [sound, setSound] = useState(false);
   const [audio] = useState(new Audio(bgmusic));
+  const [position, setPosition] = useState({ top: 0, left: 0 });
 
   useEffect(() => {
     if (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -119,6 +121,7 @@ function App() {
   return (
     <div >
       <Background />
+      <Butterfly />
       <Suspense fallback={<h3>Loading...</h3>}>
         {token ?
           <div style={{ alignItems: 'center', position: 'absolute', display: 'flex', flex: 1, backgroundColor: '#a855f7', height: 50, width: '100vw', justifyContent: 'space-between', zIndex:10 }}>

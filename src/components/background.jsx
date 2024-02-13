@@ -1,7 +1,6 @@
 import React from 'react';
 import Lottie from 'lottie-react';
 import moon from "../img/moon.json";
-import star from "../img/star.json";
 import bg from "../img/bg.png";
 
 function Background() {
